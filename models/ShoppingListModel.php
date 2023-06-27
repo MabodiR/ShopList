@@ -16,10 +16,12 @@ class ShoppingListModel
 
     public function getAllItems()
     {
-        // Fetch all Laptops from the database
+        // Retrieve all items from the "Laptops" table
         $query = "SELECT * FROM Laptops";
-        $result = $this->db->query($query);
-        return $result->fetchAll();
+        $stmt = $this->conn->query($query);
+        $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $items;
     }
 
  

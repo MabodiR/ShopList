@@ -2,9 +2,15 @@
 
 class ShoppingListController
 {
-  
+    private $shoppingListModel;
+
+    public function __construct()
+    {
+        $this->shoppingListModel = new ShoppingListModel();
+    }
 
     public function addItem($image, $brand, $model, $price) {
+
 
         // Connect to the database
         $dbHost = 'localhost';
@@ -47,20 +53,20 @@ class ShoppingListController
 
     public function displayList()
     {
-        // Include the ShoppingListModel file
-        require_once 'models/ShoppingListModel.php';
+    // Include the ShoppingListModel file
+    require_once 'models/ShoppingListModel.php';
 
-        // Create a database connection
-        $dbConnection = new PDO('mysql:host=localhost;dbname=shopping', 'root', '');
+    // Create a database connection
+    $dbConnection = new PDO('mysql:host=localhost;dbname=shopping', 'root', '');
 
-        // Instantiate the ShoppingListModel with the database connection
-        $model = new ShoppingListModel($dbConnection);
+    // Instantiate the ShoppingListModel with the database connection
+    $model = new ShoppingListModel($dbConnection);
 
-        // Get all items from the model
-        $items = $model->getAllItems();
+    // Get all items from the model
+    $items = $model->getAllItems();
 
-        // Render the view
-        require_once 'views/shop.php';
+    // Render the view
+    require_once 'views/shop.php';
     }
 
     public function home()

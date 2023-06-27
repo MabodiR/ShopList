@@ -61,14 +61,14 @@
         <div class="container">
           <ul class="site-menu js-clone-nav d-none d-md-block">
             <li class="has-children active">
-              <a href="index.html">Home</a>
+              <a href="home.php">Home</a>
             </li>
             <li>
               <a href="#">About</a>
             </li>
-            <li class="active"><a  href="shop.php">Shop</a></li>
-            <li><a href="add.php">Add Item</a></li>
-            <li><a href="admin.php">Admin</a></li>
+            <li class="active"><a  href="shop.html">Shop</a></li>
+            <li><a href="/add.php">Catalogue</a></li>
+            <li><a href="/admin.php">Admin</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
@@ -135,15 +135,15 @@
 
   </div>
 
-  <script src="../public/js/jquery-3.3.1.min.js"></script>
-  <script src="../public/js/jquery-ui.js"></script>
-  <script src="../public/js/popper.min.js"></script>
-  <script src="../public/js/bootstrap.min.js"></script>
-  <script src="../public/js/owl.carousel.min.js"></script>
-  <script src="../public/js/jquery.magnific-popup.min.js"></script>
-  <script src="../public/js/aos.js"></script>
+  <script src="./public/js/jquery-3.3.1.min.js"></script>
+  <script src="./public/js/jquery-ui.js"></script>
+  <script src="./public/js/popper.min.js"></script>
+  <script src="./public/js/bootstrap.min.js"></script>
+  <script src="./public/js/owl.carousel.min.js"></script>
+  <script src="./public/js/jquery.magnific-popup.min.js"></script>
+  <script src="./public/js/aos.js"></script>
 
-  <script src="../public/js/main.js"></script>
+  <script src="./public/js/main.js"></script>
     
   </body>
 </html>

@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
-    <link rel="stylesheet" href="../public/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="./public/fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/css/magnific-popup.css">
-    <link rel="stylesheet" href="../public/css/jquery-ui.css">
-    <link rel="stylesheet" href="../public/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../public/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/magnific-popup.css">
+    <link rel="stylesheet" href="./public/css/jquery-ui.css">
+    <link rel="stylesheet" href="./public/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./public/css/owl.theme.default.min.css">
 
 
-    <link rel="stylesheet" href="../public/css/aos.css">
+    <link rel="stylesheet" href="./public/css/aos.css">
 
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="./public/css/style.css">
     
   </head>
   <body>
@@ -61,14 +61,14 @@
         <div class="container">
           <ul class="site-menu js-clone-nav d-none d-md-block">
             <li class="has-children active">
-              <a href="index.html">Home</a>
+              <a href="home.php">Home</a>
             </li>
             <li>
               <a href="#">About</a>
             </li>
             <li class="active"><a  href="shop.html">Shop</a></li>
-            <li><a href="#">Catalogue</a></li>
-            <li><a href="#">New Arrivals</a></li>
+            <li><a href="/add.php">Catalogue</a></li>
+            <li><a href="/admin.php">Admin</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
@@ -101,13 +101,12 @@
             <div class="row mb-5">
 
             <div class="row mb-5">
-            <?php
-            // Loop through the items and generate the HTML code
-            foreach ($items as $item) {
+            <?php foreach ($items as $item) {
               $itemName = $item['brand'];
               $itemDescription = $item['model'];
               $itemPrice = $item['price'];
               $itemImage = $item['image'];
+              $itemId = $item['id']; // Assuming there's an 'id' column in the database table
             ?>
               <div class="col-sm-6 col-lg-4 mb-4 item" data-aos="fade-up">
                 <div class="block-4 text-center border">
@@ -118,16 +117,15 @@
                     <h3><a href="shop-single.html"><?php echo $itemName; ?></a></h3>
                     <p class="mb-0"><?php echo $itemDescription; ?></p>
                     <p class="text-primary font-weight-bold">$<?php echo $itemPrice; ?></p>
+                    <form action="add-to-cart.php" method="post">
+                      <input type="hidden" name="itemId" value="<?php echo $itemId; ?>">
+                      <button type="submit" class="btn btn-success">Add to Cart</button>
+                    </form>
                   </div>
                 </div>
               </div>
-            <?php
-            }
-            ?>
+            <?php } ?>
           </div>
-
-          
-
 
             </div>
             <div class="row" data-aos="fade-up">
@@ -163,15 +161,15 @@
 
   </div>
 
-  <script src="../public/js/jquery-3.3.1.min.js"></script>
-  <script src="../public/js/jquery-ui.js"></script>
-  <script src="../public/js/popper.min.js"></script>
-  <script src="../public/js/bootstrap.min.js"></script>
-  <script src="../public/js/owl.carousel.min.js"></script>
-  <script src="../public/js/jquery.magnific-popup.min.js"></script>
-  <script src="../public/js/aos.js"></script>
+  <script src="./public/js/jquery-3.3.1.min.js"></script>
+  <script src="./public/js/jquery-ui.js"></script>
+  <script src="./public/js/popper.min.js"></script>
+  <script src="./public/js/bootstrap.min.js"></script>
+  <script src="./public/js/owl.carousel.min.js"></script>
+  <script src="./public/js/jquery.magnific-popup.min.js"></script>
+  <script src="./public/js/aos.js"></script>
 
-  <script src="../public/js/main.js"></script>
+  <script src="./public/js/main.js"></script>
     
   </body>
 </html>
